@@ -63,41 +63,118 @@ h1 {
   margin-right: 20px;
   margin-top: 4px;
 }
-.contactLists{
-    display: flex;
-    justify-content: space-between;
-    padding-left: 17px;
-    margin: 0px;
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: bold;
-    font-size: 16px;
+.contactLists
+    {
+    display: list-item;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 0px;
+    margin-left: 10px;
   }
-  
+  .contact-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    /* margin: 10px; */
+    width: 300px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .contact-card p {
+    margin: 5px 0;
+  }
+  .contact-card:hover {
+    background-color: #cee7f2; /* Change background color on hover */
+  }
+  h4{
+    margin-left: 16px;
+  }
   
   body {
-    margin: 0;
     font-family: Arial, sans-serif;
   }
-  
-  .box {
-    line-spacing: 0px;
+  .dialog-box {
+    width: 450px;
+    margin-left: 36em;
+    margin-top: 5em;
+    padding: 20px;
+    background-color: #fff;
+    /* border: 1px solid #333; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none;
+    position: absolute;
+    z-index: 1000;
   }
-  
-  .box ul {
-    border: 2px solid #cccccc;
-    margin-left: 20px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    margin-right: 0px;
-    padding-left: 10px;
-    padding-right: 5px;
-    width: 500px;
+   
+  .input-group {
+    margin-bottom: 15px;
   }
-  
-  .addItemDialog {
+   
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+   
+  .input-group input {
+    width: 345px;
+    padding: 8px;
+  }
+   
+  .input-group textarea {
+    width: 345px;
+    padding: 8px;
+  }
+   
+  .phone {
+    display: flex;
+    column-gap: 12px
+  }
+   
+  .input-group .phone input {
+    padding: 8px;
+  }
+   
+  .col input {
+    width: 158px;
+  }
+   
+  .details {
+    border: 1px solid;
+    width: 177px;
+    padding-left: 25px;
+  }
+  .addbutton{
+ background-color: green;
+ color: #fff;
+ float: right;
+ border: none;
+ padding-right: 48px;
+  padding-left: 35px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  }
+   
+  /* Full Details Box */
+  .full-details-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+   
+  .full-details-box button {
     margin-top: 10px;
   }
-  
-  .landline-label{
-    margin-left:65px;
+  .contact{
+    margin-left: 2px;
+    border: 1px solid darkgray;
+    width: 300px;
+    padding-left: 8px;
+    padding-top: 11px
+
   }

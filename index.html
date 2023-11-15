@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+       <div class="page-header">
+            <div class="page-logo">
+                <h1>
+                    Address Book
+                </h1>
+            </div>
+           <div class="topnav">
+                <div>
+                <ul class =nav>
+                <li><a>HOME</a></li>
+                <li><a href="#" onclick="openDialog()">+ADD</a></li>
+                </ul>
+                <img class="image" src="blog-icon.png" >
+                </div>
+                </div>
+        </div>
+     <dialog id="addItemDialog">
+        <form id="addItemForm">
+            <label for="name">Name</label>
+            <br>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Email</label>
+            <br>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="mobilenumber">Mobile Number</label>
+            <label for="landline" class="landline-label">Landline</label>
+            <br>
+            <input type="tel" id="mobilenumber" name="mobilenumber" required>
+            <input type="tel" id="landline" name="landline" required>
+            <br>
+                       
+            <label for="website">Website</label>
+            <br>
+            <input type="text" id="website" name="website" required>
+            <br>
+            <label for="address">Address</label>
+            <br>
+            <input type="text" id="address" name="address" required>
+            <br>
+
+            <button type="button" onclick="addItem()">Add</button>
+            <button type="button" onclick="closeDialog()">Close</button>
+        </form>
+    </dialog>
+    <div id="contactList" class="contactLists"> <h4>CONTACTS</h4> </div>
+   
+    <script src="home.js"></script>
+</body>

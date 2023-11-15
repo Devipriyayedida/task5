@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    position: relative;
+}
+.page-logo {
+    background: #3399cc;
+}
+h1 {
+    font-family: "Century Gothic",sans-serif;
+    color: #fff;
+    line-height: 88px;
+    font-weight: normal;
+    font-size: 39px;
+    padding-left: 17px;
+    margin: 0;
+}
+.topnav {
+    height: 30px;
+    padding-right: 0px;
+    background-color: #333;
+    font-weight: bolder;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 15px;
+    overflow: hidden;
+  }
+  li {
+    display: inline-block;
+    padding: 7px;
+    
+  }
+  .nav {
+    margin-left: 5px;
+    padding: 0px;
+    color: white;
+    font-size: 12px;
+    display: inline-flex;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+   
+  .nav a {
+    padding: 8px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+ 
+  .nav li:first-child:hover {
+    background-color: #ff9d2f;
+   
+  }
+  .nav li:not(:first-child):hover {
+    background-color: #ff9d2f;
+    color: #000000;
+    /* border-left: 2px solid white; */
+  }
+
+.image {
+  float: right;
+  justify-content: end;
+  margin-right: 20px;
+  margin-top: 4px;
+}
+.contactLists{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 17px;
+    margin: 0px;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .box {
+    line-spacing: 0px;
+  }
+  
+  .box ul {
+    border: 2px solid #cccccc;
+    margin-left: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    padding-left: 10px;
+    padding-right: 5px;
+    width: 500px;
+  }
+  
+  .addItemDialog {
+    margin-top: 10px;
+  }
+  
+  .landline-label{
+    margin-left:65px;
+  }

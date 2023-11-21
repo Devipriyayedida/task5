@@ -1,167 +1,247 @@
 body {
-    margin: 0;
-    position: relative;
+  margin: 0;
+  position: relative;
 }
 .page-logo {
-    background: #3399cc;
+  background: #3399cc;
 }
 h1 {
-    font-family: "Century Gothic",sans-serif;
-    color: #fff;
-    line-height: 88px;
-    font-weight: normal;
-    font-size: 39px;
-    padding-left: 17px;
-    margin: 0;
+  font-family: "Century Gothic",sans-serif;
+  color: #fff;
+  line-height: 88px;
+  font-weight: normal;
+  font-size: 39px;
+  padding-left: 17px;
+  margin: 0;
 }
 .topnav {
-    height: 30px;
-    padding-right: 0px;
-    background-color: #333;
-    font-weight: bolder;
-  }
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 15px;
-    overflow: hidden;
-  }
-  li {
-    display: inline-block;
-    padding: 7px;
-    
-  }
-  .nav {
-    margin-left: 5px;
-    padding: 0px;
-    color: white;
-    font-size: 12px;
-    display: inline-flex;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  }
-   
-  .nav a {
-    padding: 8px;
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-  }
+  height: 30px;
+  padding-right: 0px;
+  background-color: #333;
+  font-weight: bolder;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 15px;
+  overflow: hidden;
+}
+li {
+  display: inline-block;
+  padding: 7px;
+  
+}
+.nav {
+  margin-left: 5px;
+  padding: 0px;
+  color: white;
+  font-size: 12px;
+  display: inline-flex;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
  
-  .nav li:first-child:hover {
-    background-color: #ff9d2f;
-   
-  }
-  .nav li:not(:first-child):hover {
-    background-color: #ff9d2f;
-    color: #000000;
-    /* border-left: 2px solid white; */
-  }
+.nav a {
+  padding: 8px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav li:first-child:hover {
+  background-color: #ff9d2f;
+ 
+}
+.nav li:not(:first-child):hover {
+  background-color: #ff9d2f;
+  color: #000000;
+  /* border-left: 2px solid white; */
+}
 
 .image {
-  float: right;
-  justify-content: end;
-  margin-right: 20px;
-  margin-top: 4px;
+float: right;
+justify-content: end;
+margin-right: 20px;
+margin-top: 4px;
 }
-.contactLists
-    {
-    display: list-item;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 0px;
-    margin-left: 10px;
-  }
- 
-  h4{
-    margin-left: 16px;
-  }
+body {
+  font-family: Arial, sans-serif;
+}
+.contact{
+  margin-left: 2px;
+  border: 1px solid darkgray;
+  width: 300px;
+  padding-left: 8px;
+  padding-top: 11px;
+  font-family: system-ui,'Segoe UI',  'Open Sans', 'Helvetica Neue', sans-serif;
   
-  body {
-    font-family: Arial, sans-serif;
-  }
-  .dialog-box {
-    width: 450px;
-    margin-left: 36em;
-    margin-top: 5em;
-    padding: 20px;
-    background-color: #fff;
-    /* border: 1px solid #333; */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    display: none;
-    position: absolute;
-    z-index: 1000;
-  }
-   
-  .input-field {
-    margin-bottom: 15px;
-  }
-   
-  .input-field label {
-    display: block;
-    margin-bottom: 5px;
-  }
-   
-  .input-field input {
-    width: 345px;
-    padding: 8px;
-  }
-   
-  .input-field textarea {
-    width: 345px;
-    padding: 8px;
-  }
-   
-  .phone {
-    display: flex;
-    column-gap: 12px
-  }
-   
-  .input-field .phone input {
-    padding: 8px;
-  }
-   
-  .col input {
-    width: 158px;
-  }
-   
-  .details {
-    border: 1px solid;
-    width: 177px;
-    padding-left: 25px;
-  }
-  .addbutton{
- background-color: green;
- color: #fff;
- float: right;
- border: none;
- padding-right: 48px;
-  padding-left: 35px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  }
-   
-  /* Full Details Box */
-  .full-details-box {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #333;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-  }
-   
-  .full-details-box button {
-    margin-top: 10px;
-  }
-  .contact{
-    margin-left: 2px;
-    border: 1px solid darkgray;
-    width: 300px;
-    padding-left: 8px;
-    padding-top: 11px
 
-  }
+} 
+.contact:hover {
+  background-color: #cee7f2; 
+}
+.contact.active {
+  background-color: #cee7f2;
+}
+.contactLists {
+  font-size: normal;
+  font-family: sans-serif;
+  margin-left: 19px;
+  font-weight: normal;
+}
+ 
+h4 {
+  font-size: larger;
+}
+ 
+.dialog-box {
+  width: 449px;
+  margin-left: 29em;
+  margin-top: 3em;
+  padding: 29px;
+  background-color: #fff;
+  /* border: 1px solid #333; */
+  box-shadow: 0 0 10px rgb(17 1 1 / 86%);
+   display: none; 
+  position: absolute;
+  z-index: 1000;
+}
+.cancel {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #333;
+}
+
+
+.input-group {
+  margin-bottom: 15px;
+}
+ 
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+ 
+.input-group input {
+  width: 345px;
+  padding: 8px;
+}
+ 
+.input-group textarea {
+  width: 345px;
+  padding: 8px;
+}
+ 
+.phone {
+  display: flex;
+  column-gap: 15px;
+}
+ 
+.input-group .phone input {
+  padding: 8px;
+}
+ 
+.col input {
+  width: 158px;
+}
+ 
+.details {
+  border: 1px solid;
+  width: 177px;
+  padding-left: 25px;
+}
+
+.add{
+  margin-right: 33px;
+  padding: 5px 38px 5px 28px;
+  background-color: green;
+  color: #fff;
+  float: right;
+  border: none;
+   }
+
+.showContacts
+{
+display: flex;
+}
+
+.fullDetailsBox
+{
+margin-left: 6em;
+margin-top: 3em;
+position: relative;
+font-family: system-ui;
+}
+.button
+{
+background: #fff;
+border: 1PX;
+}
+
+.editDeleteButtons {
+position: absolute;
+top: 27px;
+right: 0;
+left: 24em;
+display: flex;
+column-gap: 18px;
+}
+
+
+.editicon
+{
+display: flex;
+flex-direction: row;
+padding-top: 4px;
+}
+
+.deleteicon
+{
+display: flex;
+flex-direction: row;
+margin-top: 3px
+}
+.first-container{
+display: flex;
+flex-direction: column;
+
+}
+.contacts-text{
+margin-left: 20px;
+}
+.editImage{
+height: 20px;
+width: 20px;
+padding-top: 5px;
+margin-left: 56px;
+}
+.deleteImage{
+height: 25px;
+width: 20px;
+}
+.sidecontaclisttname{
+  font-size: 26px;
+
+}
+.contactname{
+ font-size: 26px;
+ font-weight: bold;
+
+ /* font-weight: lighter; */
+ margin-bottom: 1.5px;
+ /* line-height: 2;  */
+}
+.contaclisttname
+  {
+     font-size: 24px; 
+      /* margin-bottom: 1.5px;  */
+    }
+.contactnametext{
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+.detailcont.active{
+  background-color: red;
+}

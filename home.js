@@ -207,7 +207,7 @@ function generateUniqueId()
     fullDetailsBox.innerHTML = '';
 }
  
-//open edit dialog box
+//open edit dialog box in page
 async function openEditDailog(contact)
 {
 

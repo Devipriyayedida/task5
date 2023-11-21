@@ -1,4 +1,3 @@
-
 function openDialog() 
 {
     
@@ -7,6 +6,16 @@ function openDialog()
 function closeDialog() 
 {
   document.getElementById('addDialog').style.display = 'none';
+}
+
+function isValidEmail(email) {
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+function isValidMobile(mobile) {
+  var mobileRegex = /^\d{10}$/;
+  return mobileRegex.test(mobile);
 }
 
 var isEditing=false;
@@ -41,9 +50,18 @@ function addContact()
       let website = document.getElementById('website').value;
       let address = document.getElementById('address').value;
       let obj = {
-        uniqueId,name,email,mobile,landline,website,address
+        uniqueId: uniqueId,name,email,mobile,landline,website,address
       }
-      if(email!="" || name != "" , mobile!=""){
+    
+      if (!isValidMobile(mobile)) {
+        alert("Enter a 10 digits mobile number.");
+        return;
+      }
+      if (!isValidEmail(email)) {
+        alert("Enter a valid email address.");
+        return;
+      }
+     {
         contactsArray.push(obj)
         localStorage.setItem("contacts",JSON.stringify(contactsArray))
         formElement.reset()
@@ -53,16 +71,11 @@ function addContact()
       }
      
     }
- // Add this line to reset the form
- formElement.reset();
 
+    formElement.reset();
   }
    
-  function isValidEmail(email) {
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  }
-   
+ 
 
 
 function generateUniqueId()
@@ -84,6 +97,7 @@ function generateUniqueId()
     existingContacts.push(contact);
     console.log("existingContacts,",existingContacts)
     localStorage.setItem('contacts', JSON.stringify(existingContacts));
+   
     alert("Contact added successfully")
     closeDialog();
     displayContact();
@@ -92,33 +106,40 @@ function generateUniqueId()
   }
    
   //displaying contacts in homepage
+function displayContact() {
+  let existingContacts = JSON.parse(localStorage.getItem("contacts"));
+  let contactList = document.getElementById('contactList');
+  contactList.textContent = "";
 
-  function displayContact() 
-  {
-      let existingContacts = JSON.parse(localStorage.getItem("contacts"))
-      let contactList = document.getElementById('contactList');
-      contactList.textContent=""
-      existingContacts.forEach(element => {
-        console.log("element")
-        let detailContainer = document.createElement("div")
-        detailContainer.classList.add("contact")
+  existingContacts.forEach(element => {
+    let detailContainer = document.createElement("div");
+    detailContainer.classList.add("contact");
 
-        detailContainer.innerHTML = `
-        <span class="sidecontaclisttname"> ${element.name}</span> <br />
-       
-         <p class="contactnametext">${element.email}</p>
-         <p class="contactnametext">${element.mobile}</p>`;
+    detailContainer.innerHTML = `
+      <span class="sidecontactname">${element.name}</span> <br />
+      <p class="contactnametext">${element.email}</p>
+      <p class="contactnametext">${element.mobile}</p>
+    `;
 
-         detailContainer.classList.add("detailcont")
+    detailContainer.classList.add("detailcont");
 
-         detailContainer.onclick = function() 
-        {
-          showFullDetails(element);
-        };  
-
-        contactList.appendChild(detailContainer)
+    detailContainer.onclick = function() {
+      // Remove active class from all contacts
+      let allContacts = document.querySelectorAll('.contact');
+      allContacts.forEach(function(contact) {
+        contact.classList.remove('active');
       });
-  }
+
+      // Add active class to the selected contact
+      detailContainer.classList.add('active');
+
+      showFullDetails(element);
+    };
+
+    contactList.appendChild(detailContainer);
+  });
+}
+
   displayContact();
 
   //show full details of the contact
@@ -128,14 +149,15 @@ function generateUniqueId()
     var fullDetailsBox = document.getElementById('fullDetailsBox');
     fullDetailsBox.style.display="block"
       var detailsHTML = `
-      <p class="contactname">${contact.name}</p>
-          <p>Email: ${contact.email}</p>
-          <p>Mobile: ${contact.mobile}</p>
-          <p>Landline:${contact.landline}</p>
-          <p>Website: ${contact.website} </p>
-
-          <p>Address: ${contact.address}</p>
-          `;
+      <div class="contacts-container">
+      <strong><h1>${contact.name}</h1></strong>
+      <p class="email">Email: ${contact.email}</p>
+      <p class="mobile">Mobile: ${contact.mobile}</p>
+      <p class="landline">Landline: ${contact.landline}</p>
+      <p class="website">Website: ${contact.website}</p>
+      <p class="address">Address: ${contact.address}</p>
+    </div>
+  `;
 
           
           fullDetailsBox.innerHTML = detailsHTML;
@@ -207,7 +229,7 @@ function generateUniqueId()
     fullDetailsBox.innerHTML = '';
 }
  
-//open edit dialog box in page
+//open edit dialog box
 async function openEditDailog(contact)
 {
 
@@ -239,6 +261,14 @@ async function openEditDailog(contact)
       let landline = document.getElementById('landline').value;
       let website = document.getElementById('website').value;
       let address = document.getElementById('address').value;
+      if (!isValidMobile(mobile)) {
+        alert("Enter a 10 digits mobile number.");
+        return;
+      }
+      if (!isValidEmail(email)) {
+        alert("Enter a valid email address.");
+        return;
+      }
       let obj = {
         uniqueId:contact.uniqueId,name,email,mobile,landline,website,address
       }
@@ -260,7 +290,9 @@ function updateContact(updatedContact) {
   existingContacts.splice(index,1,updatedContact)
   localStorage.setItem('contacts', JSON.stringify(existingContacts));
   closeDialog();
+ 
   let fullDetailsBox = document.getElementById("fullDetailsBox")
+  
   fullDetailsBox.textContent = ""
   displayContact();
    
@@ -268,16 +300,16 @@ function updateContact(updatedContact) {
 }
 //Delete Contacts
 function deleteContact(contactToDelete) {
-  var existingContacts = JSON.parse(localStorage.getItem('contacts')) || [];
-  let index = existingContacts.findIndex(element => element.uniqueId === contactToDelete.uniqueId)
-  existingContacts.splice(index,1)
-  localStorage.setItem('contacts', JSON.stringify(existingContacts));
+  // var existingContacts = JSON.parse(localStorage.getItem('contacts')) || [];
+  let index = contactsArray.findIndex(element => element.uniqueId === contactToDelete.uniqueId)
+  contactsArray.splice(index,1)
+  localStorage.setItem('contacts', JSON.stringify(contactsArray));
   // alert('Contact deleted successfully');
   displayContact();
 }
 
   function cancelDialog() {
     var form = document.getElementById("addDialog");
-    // form.reset();
+    //  form.reset();
     closeDialog();
   }

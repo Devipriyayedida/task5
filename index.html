@@ -2,14 +2,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
        <div class="page-header">
             <div class="page-logo">
-                <h1>
+                <h1 class="main-head">
                     Address Book
                 </h1>
             </div>
@@ -19,24 +19,24 @@
                 <li><a>HOME</a></li>
                 <li><a href="#" onclick="addContact()">+ADD</a></li>
                 </ul>
-                <img class="image" src="blog-icon.png">
+                <img class="image" src="blog-icon.png" >
                 </div>
                 </div>
         </div>
         <div id="addDialog" class="dialog-box">
            <form id="addcontactForm">
                 <span class="cancel" onclick="cancelDialog()">X</span>
-                <div class="input-group name">
+                <div class="input-field name">
                 <label for="name"><b>Name:</b></label>
                 <input type="text" id="name" required>
             </div>
          
-            <div class="input-group">
+            <div class="input-field">
                 <label for="email"><b>Email:</b></label>
                 <input type="email" id="email" name="email" required>
             </div>
             
-            <div class="input-group phone">
+            <div class="input-field phone">
                 <div class="col">
                     <label for="mobile"><b>Mobile:</b></label>
                     <input type="number" id="mobile" required onkeyup="phonecheck(); return false;">
@@ -47,12 +47,12 @@
                 </div>
             </div>
          
-            <div class="input-group">
+            <div class="input-field">
                 <label for="website"><b>Website:</b></label>
                 <input type="url" id="website">
             </div>
          
-            <div class="input-group">
+            <div class="input-field">
                 <label for="address"><b>Address:</b></label>
                 <textarea id="address" rows="4"></textarea>
             </div>

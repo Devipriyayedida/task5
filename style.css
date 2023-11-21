@@ -5,7 +5,7 @@ body {
 .page-logo {
   background: #3399cc;
 }
-h1 {
+.main-head {
   font-family: "Century Gothic",sans-serif;
   color: #fff;
   line-height: 88px;
@@ -37,7 +37,7 @@ li {
   color: white;
   font-size: 12px;
   display: inline-flex;
-  font-family: "Segoe UI", Tahoma,  Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
  
 .nav a {
@@ -73,7 +73,7 @@ body {
   padding-left: 8px;
   padding-top: 11px;
   font-family: system-ui,'Segoe UI',  'Open Sans', 'Helvetica Neue', sans-serif;
-  
+  cursor: pointer;
 
 } 
 .contact:hover {
@@ -115,21 +115,21 @@ h4 {
 }
 
 
-.input-group {
+.input-field {
   margin-bottom: 15px;
 }
  
-.input-group label {
+.input-field label {
   display: block;
   margin-bottom: 5px;
 }
  
-.input-group input {
+.input-field input {
   width: 345px;
   padding: 8px;
 }
  
-.input-group textarea {
+.input-field textarea {
   width: 345px;
   padding: 8px;
 }
@@ -139,7 +139,7 @@ h4 {
   column-gap: 15px;
 }
  
-.input-group .phone input {
+.input-field .phone input {
   padding: 8px;
 }
  
@@ -170,7 +170,7 @@ display: flex;
 .fullDetailsBox
 {
 margin-left: 6em;
-margin-top: 3em;
+margin-top: 2em;
 position: relative;
 font-family: system-ui;
 }
@@ -187,6 +187,8 @@ right: 0;
 left: 24em;
 display: flex;
 column-gap: 18px;
+font-family: Calibri;
+
 }
 
 
@@ -195,13 +197,17 @@ column-gap: 18px;
 display: flex;
 flex-direction: row;
 padding-top: 4px;
+cursor: pointer;
+
 }
 
 .deleteicon
 {
 display: flex;
 flex-direction: row;
-margin-top: 3px
+margin-top: 3px;
+cursor: pointer;
+padding-left: 8px;
 }
 .first-container{
 display: flex;
@@ -212,17 +218,19 @@ flex-direction: column;
 margin-left: 20px;
 }
 .editImage{
-height: 20px;
+height: 18px;
 width: 20px;
 padding-top: 5px;
 margin-left: 56px;
+padding-right: 5px;
 }
 .deleteImage{
-height: 25px;
+height: 21px;
 width: 20px;
+padding-left: 15px;
 }
 .sidecontaclisttname{
-  font-size: 26px;
+  font-size: 33px;
 
 }
 .contactname{
@@ -233,15 +241,43 @@ width: 20px;
  margin-bottom: 1.5px;
  /* line-height: 2;  */
 }
-.contaclisttname
+.contacts-container h1 {
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: 500;
+  padding-left: 0px;
+ 
+}
+
+.contacts-container p {
+  margin: 0;
+  padding-left: 2px;
+}
+
+.contacts-container p.email
+{
+  margin-top: 1px;
+  margin-bottom: 17px;
+}
+
+
+.contacts-container p.landline
+{
+ margin-bottom: 20px;
+}
+
+.contacts-container p.address
+{
+  margin-top: 20px;
+}
+
+.sidecontactname
   {
-     font-size: 24px; 
-      /* margin-bottom: 1.5px;  */
+     font-size: 32px; 
+  
     }
 .contactnametext{
-  margin-top: 10px;
+  margin-top: 2px;
   margin-bottom: 0px;
 }
-.detailcont.active{
-  background-color: red;
-}
+

@@ -90,13 +90,13 @@ function generateUniqueId()
 
   function saveContact(contact) 
   {
-    var existingContacts = JSON.parse(localStorage.getItem('contacts')) || [];
+    var contactsArray = JSON.parse(localStorage.getItem('contacts')) || [];
     // contact.id = generateUniqueId();
     console.log("contact,",contact)
 
-    existingContacts.push(contact);
-    console.log("existingContacts,",existingContacts)
-    localStorage.setItem('contacts', JSON.stringify(existingContacts));
+    contactsArray.push(contact);
+    console.log("contactsArray,",contactsArray)
+    localStorage.setItem('contacts', JSON.stringify(contactsArray));
    
     alert("Contact added successfully")
     closeDialog();
@@ -107,11 +107,11 @@ function generateUniqueId()
    
   //displaying contacts in homepage
 function displayContact() {
-  let existingContacts = JSON.parse(localStorage.getItem("contacts"));
+  let contactsArray = JSON.parse(localStorage.getItem("contacts"));
   let contactList = document.getElementById('contactList');
   contactList.textContent = "";
 
-  existingContacts.forEach(element => {
+  contactsArray.forEach(element => {
     let detailContainer = document.createElement("div");
     detailContainer.classList.add("contact");
 
@@ -285,10 +285,10 @@ async function openEditDailog(contact)
 
 function updateContact(updatedContact) {
   console.log("updatedContact",updatedContact)
-  var existingContacts = JSON.parse(localStorage.getItem('contacts')) || [];
-  let index = existingContacts.findIndex(element => element.uniqueId === updatedContact.uniqueId)
-  existingContacts.splice(index,1,updatedContact)
-  localStorage.setItem('contacts', JSON.stringify(existingContacts));
+  var contactsArray = JSON.parse(localStorage.getItem('contacts')) || [];
+  let index = contactsArray.findIndex(element => element.uniqueId === updatedContact.uniqueId)
+  contactsArray.splice(index,1,updatedContact)
+  localStorage.setItem('contacts', JSON.stringify(contactsArray));
   closeDialog();
  
   let fullDetails = document.getElementById("fullDetails")

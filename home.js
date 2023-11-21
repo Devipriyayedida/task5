@@ -118,7 +118,7 @@ function displayContact() {
     detailContainer.innerHTML = `
       <span class="sidecontactname">${element.name}</span> <br />
       <p class="contactnametext">${element.email}</p>
-      <p class="contactnametext">${element.mobile}</p>
+      <p class="contactnametextmobile">${element.mobile}</p>
     `;
 
     detailContainer.classList.add("detailcont");

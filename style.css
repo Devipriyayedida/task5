@@ -162,12 +162,12 @@ h4 {
   border: none;
    }
 
-.showContacts
+.Contacts-Container
 {
 display: flex;
 }
 
-.fullDetailsBox
+.fullDetails
 {
 margin-left: 6em;
 margin-top: 2em;

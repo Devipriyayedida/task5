@@ -34,8 +34,8 @@ else{
 //add contact
 function addContact() 
 {
-  let fullDetailsBox = document.getElementById("fullDetailsBox")
-  fullDetailsBox.style.display = "none"
+  let fullDetails = document.getElementById("fullDetails")
+  fullDetails.style.display = "none"
   openDialog()
   console.log("unique",uniqueId,contactsArray)
     uniqueId = uniqueId + 1
@@ -146,8 +146,8 @@ function displayContact() {
 
   function showFullDetails(contact) {
     
-    var fullDetailsBox = document.getElementById('fullDetailsBox');
-    fullDetailsBox.style.display="block"
+    var fullDetails = document.getElementById('fullDetails');
+    fullDetails.style.display="block"
       var detailsHTML = `
       <div class="contacts-container">
       <strong><h1>${contact.name}</h1></strong>
@@ -160,7 +160,7 @@ function displayContact() {
   `;
 
           
-          fullDetailsBox.innerHTML = detailsHTML;
+  fullDetails.innerHTML = detailsHTML;
 
           let editContainer = document.createElement("div")
           editContainer.style.display = "flex"
@@ -207,7 +207,7 @@ function displayContact() {
           editDeleteContainer.appendChild(editContainer)
           editDeleteContainer.appendChild(deleteContainer);
        
-          fullDetailsBox.appendChild(editDeleteContainer);
+          fullDetails.appendChild(editDeleteContainer);
         
           
           editContainer.onclick = function()
@@ -225,8 +225,8 @@ function displayContact() {
   }
 
   function closeDetailsBox() {
-    var fullDetailsBox = document.getElementById('fullDetailsBox');
-    fullDetailsBox.innerHTML = '';
+    var fullDetails = document.getElementById('fullDetails');
+    fullDetails.innerHTML = '';
 }
  
 //open edit dialog box
@@ -291,9 +291,9 @@ function updateContact(updatedContact) {
   localStorage.setItem('contacts', JSON.stringify(existingContacts));
   closeDialog();
  
-  let fullDetailsBox = document.getElementById("fullDetailsBox")
+  let fullDetails = document.getElementById("fullDetails")
   
-  fullDetailsBox.textContent = ""
+  fullDetails.textContent = ""
   displayContact();
    
 
